@@ -1,0 +1,34 @@
+
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-title class="title">
+      <b>BMI Calculator</b>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div class="types">
+  <ion-item>
+  <ion-label position="stacked">Weight(kg)</ion-label>
+  <ion-input type="number" [(ngModel)]="weight" required></ion-input>
+  </ion-item>
+  <ion-item class="ion-margin-bottom">
+  <ion-label position="stacked">Height(cm)</ion-label>
+  <ion-input type="number" [(ngModel)]="height" required></ion-input>
+  </ion-item>
+  </div>
+  <ion-button expand="block" (click)="calculateBMI()">Calculate</ion-button>
+  <ion-card *ngIf="fare">
+    <ion-card-header>
+      <ion-card-title>BMI Calculation</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p>Weight: {{this.weight}} kg</p>
+      <p>Height: {{this.height}} cm</p>
+      <p>BMI: {{bmi}}</p>
+      <p><strong>Result: {{result}}</strong></p>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
+
